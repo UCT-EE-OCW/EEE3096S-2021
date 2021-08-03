@@ -5,7 +5,7 @@ The Lab manual contains all details.
 ## Work packages
 1. Workpackage 1
     - Tutorial: Pi Config, Linux Basics, GDB
-    - Prac: Use RTC to set timing libraries
+    - Prac: Using Libraries to write to RTC
 
 2. Workpackage 2
     - Tutorial: Arm Datasheet
