@@ -9,6 +9,7 @@
  * Date
 */
 
+#include <signal.h> //for catching signals
 #include <wiringPi.h>
 #include <wiringPiI2C.h>
 #include <stdio.h> //For printf functions
@@ -23,6 +24,23 @@ long lastInterruptTime = 0; //Used for button debounce
 int RTC; //Holds the RTC instance
 
 int HH,MM,SS;
+
+
+// Clean up function to avoid damaging used pins
+void CleanUp(int sig){
+	printf("Cleaning up\n");
+
+	//Set LED to low then input mode
+	//Logic here
+
+
+	for (int j=0; j < sizeof(BTNS)/sizeof(BTNS[0]); j++) {
+		pinMode(BTNS[j],INPUT);
+	}
+
+	exit(0);
+
+}
 
 void initGPIO(void){
 	/* 
@@ -63,13 +81,14 @@ void initGPIO(void){
  * This function is called, and calls all relevant functions we've written
  */
 int main(void){
+	signal(SIGINT,CleanUp);
 	initGPIO();
 
 	//Set random time (3:04PM)
 	//You can comment this file out later
-	wiringPiI2CWriteReg8(RTC, HOUR, 0x13+TIMEZONE);
-	wiringPiI2CWriteReg8(RTC, MIN, 0x4);
-	wiringPiI2CWriteReg8(RTC, SEC, 0x00);
+	wiringPiI2CWriteReg8(RTC, HOUR_REGISTER, 0x13+TIMEZONE);
+	wiringPiI2CWriteReg8(RTC, MIN_REGISTER, 0x4);
+	wiringPiI2CWriteReg8(RTC, SEC_REGISTER, 0x00);
 	
 	// Repeat this until we shut down
 	for (;;){
@@ -206,13 +225,13 @@ void toggleTime(void){
 
 		HH = hFormat(HH);
 		HH = decCompensation(HH);
-		wiringPiI2CWriteReg8(RTC, HOUR, HH);
+		wiringPiI2CWriteReg8(RTC, HOUR_REGISTER, HH);
 
 		MM = decCompensation(MM);
-		wiringPiI2CWriteReg8(RTC, MIN, MM);
+		wiringPiI2CWriteReg8(RTC, MIN_REGISTER, MM);
 
 		SS = decCompensation(SS);
-		wiringPiI2CWriteReg8(RTC, SEC, 0b10000000+SS);
+		wiringPiI2CWriteReg8(RTC, SEC_REGISTER, 0b10000000+SS);
 
 	}
 	lastInterruptTime = interruptTime;
