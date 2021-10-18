@@ -1,0 +1,17 @@
+Time resolution is 1 ps
+Write 10 to address 4
+Write 11 to address 5
+Write 12 to address 6
+Write 13 to address 7
+Write 14 to address 0
+Write 15 to address 1
+Write  0 to address 2
+Write  1 to address 3
+Read 10 from address 4
+Read 11 from address 5
+Read 12 from address 6
+Read 13 from address 7
+Read 14 from address 0
+Read 15 from address 1
+Read  0 from address 2
+Read  1 from address 3

@@ -23,6 +23,8 @@ The Lab manual contains all details.
     - Tutorial: EDA Playground Walkthrough
     - Prac: State Machines - Implement ALU in Vwerilog
 
-6. Workpackate 6
-    - Turotial: Verilog testbenches
+6. Workpackage 6
+    - Tutorial: Verilog testbenches
+        -- BalenaOS intro for EEE3095S students
     - Prac: Building a simple CPU
+        -- BalenaOS deployed ADC application for EEE3095S students

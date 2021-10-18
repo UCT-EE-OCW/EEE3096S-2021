@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Webtalk v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:07 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Sun Oct 17 23:21:39 2021
+# Process ID: 1237077
+# Current directory: /home/jwyngaard/Work/UCT/OneDrive/3096/PracsGit/EEE3096S-2021/WorkPackage6/WP6_Vivado/WP6_Vivado.sim/sim_1/behav/xsim
+# Command line: wbtcv -mode batch -source /home/jwyngaard/Work/UCT/OneDrive/3096/PracsGit/EEE3096S-2021/WorkPackage6/WP6_Vivado/WP6_Vivado.sim/sim_1/behav/xsim/xsim.dir/tb_reg_mem_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: /home/jwyngaard/Work/UCT/OneDrive/3096/PracsGit/EEE3096S-2021/WorkPackage6/WP6_Vivado/WP6_Vivado.sim/sim_1/behav/xsim/webtalk.log
+# Journal file: /home/jwyngaard/Work/UCT/OneDrive/3096/PracsGit/EEE3096S-2021/WorkPackage6/WP6_Vivado/WP6_Vivado.sim/sim_1/behav/xsim/webtalk.jou
+#-----------------------------------------------------------
+source /home/jwyngaard/Work/UCT/OneDrive/3096/PracsGit/EEE3096S-2021/WorkPackage6/WP6_Vivado/WP6_Vivado.sim/sim_1/behav/xsim/xsim.dir/tb_reg_mem_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Sun Oct 17 23:21:39 2021...

@@ -1,0 +1,8 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/jwyngaard/Work/UCT/OneDrive/3096/PracsGit/EEE3096S-2021/WorkPackage6/VivadoProjectWP6/WP6_Vivado.srcs/sources_1/RegMem.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module reg_mem
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/jwyngaard/Work/UCT/OneDrive/3096/PracsGit/EEE3096S-2021/WorkPackage6/VivadoProjectWP6/WP6_Vivado.srcs/sim_1/new/RegMem_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_reg_mem
+WARNING: [VRFC 10-8374] loop variable declaration is not allowed in this mode of Verilog [/home/jwyngaard/Work/UCT/OneDrive/3096/PracsGit/EEE3096S-2021/WorkPackage6/VivadoProjectWP6/WP6_Vivado.srcs/sim_1/new/RegMem_tb.v:26]
+WARNING: [VRFC 10-8374] loop variable declaration is not allowed in this mode of Verilog [/home/jwyngaard/Work/UCT/OneDrive/3096/PracsGit/EEE3096S-2021/WorkPackage6/VivadoProjectWP6/WP6_Vivado.srcs/sim_1/new/RegMem_tb.v:36]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/jwyngaard/Work/UCT/OneDrive/3096/PracsGit/EEE3096S-2021/WorkPackage6/VivadoProjectWP6/WP6_Vivado.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
