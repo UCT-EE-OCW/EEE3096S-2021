@@ -5,6 +5,7 @@
 ##  Usage      : just rename or add contain to .gitignore                              ##
 ##  License    : MIT                                                                   ##
 #########################################################################################
+VivadoProjectWP6/WP6_Vivado.gen/*
 WorkPackage6/VivadoProjectWP6/WP6_Vivado.sim/sim_1/behav/xsim/*.sh
 ## log files
 *.log
