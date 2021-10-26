@@ -7,6 +7,19 @@ module CU (clk,rst, instr, result2, operand1, operand2, offset, opcode, sel1, se
     parameter INSTR_WIDTH =20; 
     //INPUTS
     input clk,rst;
+    /*# Instruction structure (20): instr (2) : Reg1 (2) : Reg2 (2) : Reg3 (2)
+     * offset(DATA_WIDTH) : Opcode (4) 
+     * ##instr: 
+     *  00 : reset
+     *  01 : std_op 
+     * std_op where operand1 & operand2 are operated on
+     * according to the opcode and result1 is stored in 
+     *  10 : storeR 
+     * Reg1 is loaded with the contents of mem address Reg2+Offset
+     *  11 : loadR
+     * Contents of Reg1 is saved to mem address Reg2+Offset
+
+     */
     input [INSTR_WIDTH-1:0]instr;
     input [DATA_WIDTH-1:0] result2;
 
@@ -77,12 +90,13 @@ module CU (clk,rst, instr, result2, operand1, operand2, offset, opcode, sel1, se
                     sel3 <= 1; //pass offset
                     w_r <= 0;
                 end else if (instruction[19:18] == 2'b11) begin //storeR 
-                   /******************************************** 
-                   *
-                   * FILL IN CORRECT CODE HERE
-                   *
-                   ********************************************/ 
-
+                    operand1 <= regfile[instruction[15:14]]; //X2
+                    operand2 <= regfile[instruction[17:16]]; //X1
+                    offset <= instruction[11:4];
+                    opcode <= instruction[3:0];
+                    sel1 <= 0; //pass data_out
+                    sel3 <= 1; //pass offset
+                    w_r <= 0; //Raise in memaccess
                 end
             end
             EXECUTE: begin //#2
@@ -105,12 +119,14 @@ module CU (clk,rst, instr, result2, operand1, operand2, offset, opcode, sel1, se
                     sel1 <= 0; //pass data_out
                     sel3 <= 1; //pass offset
                     w_r <= 0;
-                end else if (instruction[19:18] == 2'b11) begin //storeR
-                   /******************************************** 
-                   *
-                   * FILL IN CORRECT CODE HERE
-                   *
-                   ********************************************/ 
+                end else if (instruction[19:18] == 2'b11) begin //storeR 
+                    operand1 <= regfile[instruction[15:14]]; //X2
+                    operand2 <= regfile[instruction[17:16]]; //X1
+                    offset <= instruction[11:4];
+                    opcode <= instruction[3:0];
+                    sel1 <= 0; //pass data_out
+                    sel3 <= 1; //pass offset
+                    w_r <= 1; //Raise in memaccess
                 end
             end
             MEM_ACCESS: begin //#3
@@ -124,13 +140,14 @@ module CU (clk,rst, instr, result2, operand1, operand2, offset, opcode, sel1, se
                     sel3 <= 1; //pass offset
                     w_r <= 0;
                 end else if (instruction[19:18] == 2'b11) begin //storeR 
-                   /******************************************** 
-                   *
-                   * FILL IN CORRECT CODE HERE
-                   * Take note of what the next state should be according to
-                   * the FSM
-                   *
-                   ********************************************/ 
+                    state = DECODE; //#1
+                    operand1 <= regfile[instruction[15:14]]; //X2
+                    operand2 <= regfile[instruction[17:16]]; //X1
+                    offset <= instruction[11:4];
+                    opcode <= instruction[3:0];
+                    sel1 <= 0; //pass data_out
+                    sel3 <= 1; //pass offset
+                    w_r <= 0; //Raise in memaccess
                 end
             end
             WRITE_BACK: begin //#4
@@ -145,12 +162,6 @@ module CU (clk,rst, instr, result2, operand1, operand2, offset, opcode, sel1, se
                     sel1 <= 1;
                     sel3 <= 0;
                     w_r <= 0;
-                end else if (instruction[19:18] == 2'b11) begin //storeR 
-                   /******************************************** 
-                   *
-                   * FILL IN CORRECT CODE HERE
-                   *
-                   ********************************************/ 
                     
                 end else if (instruction[19:18] == 2'b10) begin //loadR             
                     regfile[instruction[17:16]] <= result2; //From data mem

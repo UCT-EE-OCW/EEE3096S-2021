@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_simple_CPU_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_simple_CPU" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="31.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="62.001 ns"></ZoomEndTime>
+      <Cursor1Time time="44.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="156"></NameColumnWidth>
+      <ValueColumnWidth column_width="66"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="10" />
+   <wvobject type="array" fp_name="/tb_simple_CPU/SCPU_DUT/result2_i">
+      <obj_property name="ElementShortName">result2_i[7:0]</obj_property>
+      <obj_property name="ObjectShortName">result2_i[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_simple_CPU/SCPU_DUT/result1_i">
+      <obj_property name="ElementShortName">result1_i[7:0]</obj_property>
+      <obj_property name="ObjectShortName">result1_i[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_simple_CPU/SCPU_DUT/wen_i">
+      <obj_property name="ElementShortName">wen_i</obj_property>
+      <obj_property name="ObjectShortName">wen_i</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_simple_CPU/SCPU_DUT/operand_a_i">
+      <obj_property name="ElementShortName">operand_a_i[7:0]</obj_property>
+      <obj_property name="ObjectShortName">operand_a_i[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_simple_CPU/SCPU_DUT/operand_1_i">
+      <obj_property name="ElementShortName">operand_1_i[7:0]</obj_property>
+      <obj_property name="ObjectShortName">operand_1_i[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_simple_CPU/SCPU_DUT/operand_b_i">
+      <obj_property name="ElementShortName">operand_b_i[7:0]</obj_property>
+      <obj_property name="ObjectShortName">operand_b_i[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_simple_CPU/SCPU_DUT/operand_2_i">
+      <obj_property name="ElementShortName">operand_2_i[7:0]</obj_property>
+      <obj_property name="ObjectShortName">operand_2_i[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="group49">
+      <obj_property name="label">CU</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="logic" fp_name="/tb_simple_CPU/SCPU_DUT/CU1/clk">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_simple_CPU/SCPU_DUT/CU1/rst">
+         <obj_property name="ElementShortName">rst</obj_property>
+         <obj_property name="ObjectShortName">rst</obj_property>
+         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_simple_CPU/SCPU_DUT/CU1/state">
+         <obj_property name="ElementShortName">state[3:0]</obj_property>
+         <obj_property name="ObjectShortName">state[3:0]</obj_property>
+         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="vbus" fp_name="vbus626">
+         <obj_property name="label">Intr_Mode</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="logic" fp_name="/tb_simple_CPU/SCPU_DUT/instruction[19]">
+            <obj_property name="ElementShortName">[19]</obj_property>
+            <obj_property name="ObjectShortName">[19]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_simple_CPU/SCPU_DUT/instruction[18]">
+            <obj_property name="ElementShortName">[18]</obj_property>
+            <obj_property name="ObjectShortName">[18]</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_simple_CPU/SCPU_DUT/CU1/regfile">
+         <obj_property name="ElementShortName">regfile[0:3][7:0]</obj_property>
+         <obj_property name="ObjectShortName">regfile[0:3][7:0]</obj_property>
+         <obj_property name="CustomSignalColor">#FFD700</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_simple_CPU/SCPU_DUT/instruction">
+         <obj_property name="ElementShortName">instruction[19:0]</obj_property>
+         <obj_property name="ObjectShortName">instruction[19:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_simple_CPU/SCPU_DUT/CU1/instr">
+         <obj_property name="ElementShortName">instr[19:0]</obj_property>
+         <obj_property name="ObjectShortName">instr[19:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_simple_CPU/SCPU_DUT/CU1/operand1">
+         <obj_property name="ElementShortName">operand1[7:0]</obj_property>
+         <obj_property name="ObjectShortName">operand1[7:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_simple_CPU/SCPU_DUT/CU1/operand2">
+         <obj_property name="ElementShortName">operand2[7:0]</obj_property>
+         <obj_property name="ObjectShortName">operand2[7:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_simple_CPU/SCPU_DUT/CU1/offset">
+         <obj_property name="ElementShortName">offset[7:0]</obj_property>
+         <obj_property name="ObjectShortName">offset[7:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_simple_CPU/SCPU_DUT/CU1/opcode">
+         <obj_property name="ElementShortName">opcode[3:0]</obj_property>
+         <obj_property name="ObjectShortName">opcode[3:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_simple_CPU/SCPU_DUT/CU1/sel1">
+         <obj_property name="ElementShortName">sel1</obj_property>
+         <obj_property name="ObjectShortName">sel1</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_simple_CPU/SCPU_DUT/CU1/sel3">
+         <obj_property name="ElementShortName">sel3</obj_property>
+         <obj_property name="ObjectShortName">sel3</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_simple_CPU/SCPU_DUT/CU1/w_r">
+         <obj_property name="ElementShortName">w_r</obj_property>
+         <obj_property name="ObjectShortName">w_r</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_simple_CPU/SCPU_DUT/CU1/result2">
+         <obj_property name="ElementShortName">result2[7:0]</obj_property>
+         <obj_property name="ObjectShortName">result2[7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group28">
+      <obj_property name="label">ALU</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="logic" fp_name="/tb_simple_CPU/SCPU_DUT/alu1/clk">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_simple_CPU/SCPU_DUT/alu1/operand_a">
+         <obj_property name="ElementShortName">operand_a[7:0]</obj_property>
+         <obj_property name="ObjectShortName">operand_a[7:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_simple_CPU/SCPU_DUT/alu1/operand_b">
+         <obj_property name="ElementShortName">operand_b[7:0]</obj_property>
+         <obj_property name="ObjectShortName">operand_b[7:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_simple_CPU/SCPU_DUT/alu1/opcode">
+         <obj_property name="ElementShortName">opcode[3:0]</obj_property>
+         <obj_property name="ObjectShortName">opcode[3:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_simple_CPU/SCPU_DUT/alu1/result">
+         <obj_property name="ElementShortName">result[7:0]</obj_property>
+         <obj_property name="ObjectShortName">result[7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group447">
+      <obj_property name="label">DataMem</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="array" fp_name="/tb_simple_CPU/SCPU_DUT/data_memory/addr">
+         <obj_property name="ElementShortName">addr[4:0]</obj_property>
+         <obj_property name="ObjectShortName">addr[4:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_simple_CPU/SCPU_DUT/data_memory/data_in">
+         <obj_property name="ElementShortName">data_in[7:0]</obj_property>
+         <obj_property name="ObjectShortName">data_in[7:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_simple_CPU/SCPU_DUT/data_memory/wen">
+         <obj_property name="ElementShortName">wen</obj_property>
+         <obj_property name="ObjectShortName">wen</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_simple_CPU/SCPU_DUT/data_memory/data_out">
+         <obj_property name="ElementShortName">data_out[7:0]</obj_property>
+         <obj_property name="ObjectShortName">data_out[7:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_simple_CPU/SCPU_DUT/data_memory/mem_array">
+         <obj_property name="ElementShortName">mem_array[31:0][7:0]</obj_property>
+         <obj_property name="ObjectShortName">mem_array[31:0][7:0]</obj_property>
+      </wvobject>
+      <wvobject type="vbus" fp_name="vbus83">
+         <obj_property name="label">RelevantData</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="array" fp_name="/tb_simple_CPU/SCPU_DUT/data_memory/mem_array[17]">
+            <obj_property name="ElementShortName">[17][7:0]</obj_property>
+            <obj_property name="ObjectShortName">[17][7:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_simple_CPU/SCPU_DUT/data_memory/mem_array[24]">
+            <obj_property name="ElementShortName">[24][7:0]</obj_property>
+            <obj_property name="ObjectShortName">[24][7:0]</obj_property>
+         </wvobject>
+      </wvobject>
+   </wvobject>
+</wave_config>
