@@ -6,7 +6,7 @@ The following outlines a system intended to use Balena to deploy 2 pi zeroWs:
 1 container running a python script that: (1) reads a SPI ADC, (2) send that information to Pi2
 
 ##Pi2: Webserver
-2 containers:
+2 containers (uses Docker compose):
 - A simple web server
 - A simple TCP reciever script
 

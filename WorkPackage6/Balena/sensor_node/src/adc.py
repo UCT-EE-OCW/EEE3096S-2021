@@ -8,69 +8,48 @@ import adafruit_mcp3xxx.mcp3008 as MCP
 from adafruit_mcp3xxx.analog_in import AnalogIn
 
 ################TCP SEND SETUP###########################
-HOST = '165.73.124.214'    # The remote host 
-#HOST = '192.168.2.8'    # The remote host in local mode
-PORT = 5003
-f = open("/data/LocalaSensorLog.txt", "w+")
-s = None
-for res in socket.getaddrinfo(HOST, PORT, socket.AF_UNSPEC, socket.SOCK_STREAM):
-    af, socktype, proto, canonname, sa = res
-    try:
-        s = socket.socket(af, socktype, proto)
-    except OSError as msg:
-        s = None
-        continue
-    try:
-        s.connect(sa)
-    except OSError as msg:
-        s.close()
-        s = None
-        continue
-    break
-if s is None:
-    print('could not open socket')
-    f.write("Could not open socket\n")
-    f.close()
-    sys.exit(1)
+
+#TODO Add code to setup the tcp connection with the correct IP and same port as the tcp_server on the other pi
+    #Test this locally before trying to deploy via balena using test messages instead of ADC values
+    #Use localmode when deploying to balena and use the advertised local address (using public IPs is possible but more complicated to configure due to the security measures BalenaOS imposes by default.  These are a good thing for real world deployment but over complicate the prac for the immediate purposes
+
+
+
+
+
 
 
 
 ##################ADC Setup##############################
-# create the spi bus
-spi = busio.SPI(clock=board.SCK, MISO=board.MISO, MOSI=board.MOSI)
 
-# create the cs (chip select)
-cs = digitalio.DigitalInOut(board.D5)
+#TODO using the adafruit circuit python SPI and MCP libraries setup the ADC interface
+#Google will supply easy to follow instructions 
 
-# create the mcp object
-mcp = MCP.MCP3008(spi, cs)
 
-# create an analog input channel on pin 0
-chan = AnalogIn(mcp, MCP.P0)
+
+
+
+
+
+
 #########################################################
 
-print("Sensor Node it awake\n")
-f.write("Sensor Node it awake\n")
+print("Sensor Node it awake\n")     #Print statements to see what's happening in balena logs
+f.write("Sensor Node it awake\n")   #Write to file statements to see what's happening if you ssh into the device and open the file locally using nano
 f.flush()
-s.sendall(b'Sensor Node it awake\n')
+s.send(b'Sensor Node it awake\n')   #send to transmit an obvious message to show up in the balena logs of the server pi
 
 while(True):
-    print("Raw ADC Value: \n", chan.value)
-    print("ADC Voltage: " + str(chan.voltage) + "V\n")
+   
 
-    f.write("Raw ADC Value: "+ str(chan.value)+"\n")
-    f.write("ADC Voltage: " + str(chan.voltage) + "V\n")
-    f.flush()
 
-    s.send(b'Sensor Node it awake')
-    
-    ADCstring = str(chan.value)
-    s.send(b'Raw ADC Value: ' + bytes(ADCstring,'utf-8'))
-    s.send(bytes(ADCstring,'utf-8'))
 
-    voltagestring = str(chan.voltage)
-    s.send(b'ADC Voltage: ')
-    s.send(bytes(voltagestring,'utf-8') + b'V')
+    #TODO add code to read the ADC values and print them, write them, and send them
+
+
+
+
+
     
     time.sleep(5)
 

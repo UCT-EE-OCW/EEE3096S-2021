@@ -8,16 +8,19 @@ def index():
 
 @app.route('/SensorStream')
 def sensor_stream():
-    with open("/data/sensorlog.txt", "r") as sl:
-        logs = sl.read()
-        return logs
-
+    #TODO: Add code that displays the contents of log file /data/sensorlog.txt 
 
 @app.route('/download')
 def download_file():
-    path = "/data/sensorlog.txt"
-    return send_file(path, as_attachment=True)
+    #TODO: Add code to download the file /data.sensorlog.txt
+
+
+
+#TODO Add the remaining functions requested either by adding more pages to the template or get fancy with more templates and better formatting
+
+
+
 
 if __name__ == '__main__':
-#    app.run(host='0.0.0.0', port=5080, debug=True)
+#    app.run(host='0.0.0.0', port=5080, debug=True) #Use this line to test basic functionality locally before trying to deploy on Pi
     app.run(host='0.0.0.0', port=80)
