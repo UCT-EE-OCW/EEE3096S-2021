@@ -1,0 +1,19 @@
+version: '2'
+volumes:
+  shareddata:
+services:
+  webserver:
+    build: ./webserver
+    volumes:
+      - 'shareddata:/data:ro'
+    ports: 
+      - 80:80
+    restart: always
+
+  tcp:
+    build: ./tcpserver
+    volumes:
+      - 'shareddata:/data'
+    ports: 
+      - 5003:5003
+    restart: always

@@ -1,0 +1,28 @@
+# base-image for python on any machine using a template variable,
+FROM balenalib/raspberry-pi-python:buster-build
+
+RUN install_packages build-essential python-dev python-smbus git i2c-tools
+
+# Set our working directory
+WORKDIR /usr/src/app
+
+# Copy requirements.txt first for better cache on later pushes
+COPY requirements.txt requirements.txt
+
+# pip install python deps from requirements.txt on the resin.io build server
+RUN python -m pip install --upgrade pip
+RUN pip install --upgrade setuptools
+RUN pip install --upgrade adafruit-python-shell
+RUN pip install --upgrade RPi.GPIO
+RUN pip install --upgrade adafruit-blinka
+
+RUN pip install -r requirements.txt
+
+# This will copy all files in our root to the working  directory in the container
+COPY . ./
+
+# Enable udevd so that plugged dynamic hardware devices show up in our container.
+ENV UDEV=1
+
+CMD ["python","-u","src/adc.py"]
+
